@@ -1,4 +1,9 @@
-!pip install openpyxl
+try:
+    import openpyxl
+except ImportError:
+    !pip install openpyxl
+    import openpyxl
+
 
 import streamlit as st
 import pandas as pd
