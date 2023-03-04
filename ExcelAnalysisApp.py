@@ -7,7 +7,7 @@ try:
     import openpyxl
 except ImportError:
     st.info("openpyxl not found, installing...")
-    !pip install openpyxl
+    pip install openpyxl
 
 # Set page title
 st.set_page_config(page_title="Excel Analysis App")
