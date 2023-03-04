@@ -1,12 +1,14 @@
+import streamlit as st
+import pandas as pd
+import subprocess
+
+# Install openpyxl if not already installed
+st.info("Checking if openpyxl is installed...")
 try:
     import openpyxl
 except ImportError:
-    !pip install openpyxl
-    import openpyxl
-
-
-import streamlit as st
-import pandas as pd
+    st.info("openpyxl not found, installing...")
+    subprocess.call(["pip", "install", "openpyxl"])
 
 # Set page title
 st.set_page_config(page_title="Excel Analysis App")
