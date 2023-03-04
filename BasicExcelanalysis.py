@@ -5,7 +5,7 @@ import pandas as pd
 @st.cache
 def read_excel(file):
     df = pd.read_excel(file)
-    return df
+    exit() df
 
 # Set up the Streamlit app
 st.title('Excel Analyzer')
