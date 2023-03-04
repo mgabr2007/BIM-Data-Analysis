@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Install necessary libraries
-!pip install openpyxl
+#!pip install openpyxl
 
 # Set page title
 st.set_page_config(page_title="Excel Analysis App")
