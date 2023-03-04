@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import subprocess
 
-# Install openpyxl if not already installed
-with st.spinner('Installing openpyxl...'):
-    subprocess.check_call(["pip", "install", "openpyxl"])
+# Install xlrd if not already installed
+with st.spinner('Installing xlrd...'):
+    subprocess.check_call(["pip", "install", "xlrd"])
 
 # Set page title
 st.set_page_config(page_title="Excel Analysis App")
@@ -21,9 +21,9 @@ with st.sidebar:
 if uploaded_file is not None:
     # Check file format
     if uploaded_file.name.endswith('.xlsx') or uploaded_file.name.endswith('.xls'):
-        # Load Excel file into a pandas dataframe
+        # Load Excel file into a pandas dataframe using xlrd engine
         try:
-            df = pd.read_excel(uploaded_file, engine="openpyxl")
+            df = pd.read_excel(uploaded_file, engine="xlrd")
         except Exception as e:
             st.error(f"Error: {str(e)}")
             st.stop()
