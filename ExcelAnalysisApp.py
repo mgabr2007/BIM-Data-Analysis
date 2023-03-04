@@ -1,14 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-# Install openpyxl if not already installed
-st.info("Checking if openpyxl is installed...")
-try:
-    import openpyxl
-except ImportError:
-    st.info("openpyxl not found, installing...")
-    pip install openpyxl
-
 # Set page title
 st.set_page_config(page_title="Excel Analysis App")
 
