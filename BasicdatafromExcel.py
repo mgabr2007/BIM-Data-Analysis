@@ -17,8 +17,7 @@ if uploaded_file is not None:
         df = pd.read_excel(uploaded_file, engine="openpyxl")
     except Exception as e:
         st.error(f"Error: {str(e)}")
-        return
-
+        exit()
     # Show dataframe
     st.write("Dataframe:")
     st.write(df.head())
