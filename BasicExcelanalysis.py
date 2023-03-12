@@ -10,6 +10,7 @@ def read_excel(file):
     data = sheet.values
     cols = next(data)[0:]
     df = pd.DataFrame(data, columns=cols)
+    df = df.astype(str)
     return df
 
 # Set up the Streamlit app
@@ -27,8 +28,10 @@ if file is not None:
     # Display some basic information about the data
     st.write(f'Number of rows: {df.shape[0]}')
     st.write(f'Number of columns: {df.shape[1]}')
-    st.write('Data types:')
-    st.write(df.dtypes)
+
+    # Display the data using the st.dataframe widget
+    st.write('Data:')
+    st.dataframe(df)
 
     # Perform some basic analysis on the data and display the results
     st.write('Basic analysis:')
