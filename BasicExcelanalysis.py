@@ -1,13 +1,19 @@
 import streamlit as st
 import pandas as pd
+import openpyxl
 
 # Define a function to read Excel file and return a Pandas DataFrame
 @st.cache
 def read_excel(file):
-    df = pd.read_excel(file)
-    exit(df)
+    wb = openpyxl.load_workbook(file)
+    sheet = wb.active
+    data = sheet.values
+    cols = next(data)[0:]
+    df = pd.DataFrame(data, columns=cols)
+    return df
 
 # Set up the Streamlit app
+st.set_page_config(page_title="Excel Analyzer", page_icon=":bar_chart:")
 st.title('Excel Analyzer')
 st.write('Upload an Excel file to get started.')
 
