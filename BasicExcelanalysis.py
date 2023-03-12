@@ -35,4 +35,4 @@ if file is not None:
 
     # Perform some basic analysis on the data and display the results
     st.write('Basic analysis:')
-    st.write(df.describe())
+    st.write(df.describe().to_string())
